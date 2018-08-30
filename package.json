@@ -1,0 +1,15 @@
+{
+  "name": "crud_usuarios",
+  "version": "1.0.0",
+  "description": "crud from users frob uberlavandery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pez nuss",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
