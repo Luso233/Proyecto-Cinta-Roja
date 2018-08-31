@@ -1,0 +1,26 @@
+<div id="paypal-button"></div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+paypal.Button.render({
+  env: 'sandbox',
+  client: {
+    sandbox: 'ATPFTTXxuU6UQLDWy7hg7JCjWzhlVA9fFr6viot4qde1ISyzd4lQhKQGfKaizIWwQWBr297YvE-oC7yl'
+  },
+  payment: function (data, actions) {
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total: '0.01',
+          currency: 'USD'
+        }
+      }]
+    });
+  },
+  onAuthorize: function (data, actions) {
+    return actions.payment.execute()
+      .then(function () {
+        window.alert('Thank you for your purchase!');
+      });
+  }
+}, '#paypal-button');
+</script>
